@@ -1,4 +1,11 @@
-<div class="task" [ngClass]="{reminder: task.reminder}">
-    <h3>{{task.text}} <i class="fa-solid fa-trash-can" style="color: red;"></i></h3>
-    <p>{{task.day}}</p>
+<div class="task" [ngClass]="{ reminder: task.reminder }">
+  <h3>
+    {{ task.text }}
+    <i
+      class="fa-solid fa-trash-can"
+      style="color: red"
+      (click)="onDeleteTask()"
+    ></i>
+  </h3>
+  <p>{{ task.day }}</p>
 </div>
