@@ -25,8 +25,11 @@ export class TasksComponent implements OnInit {
   }
 
   handleUpdateReminder(task: Task) {
-    let updatedTask = this.tasks.find((t) => t.id === task.id);
-    updatedTask!.reminder = !updatedTask?.reminder;
+    // let updatedTask = this.tasks.find((t) => t.id === task.id);
+    // updatedTask!.reminder = !updatedTask?.reminder;
+
+    task.reminder = !task.reminder
+
     this.taskService.updateReminder(task).subscribe();
   }
 }

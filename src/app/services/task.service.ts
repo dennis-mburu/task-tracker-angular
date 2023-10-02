@@ -4,6 +4,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Task } from '../Task';
 // import { TASKS } from '../mock-tasks';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -24,6 +30,6 @@ export class TaskService {
   }
 
   updateReminder(task: Task) {
-    return this.http.put(`${this.apiUrl}/${task.id}`, task);
+    return this.http.put(`${this.apiUrl}/${task.id}`, task, httpOptions);
   }
 }
