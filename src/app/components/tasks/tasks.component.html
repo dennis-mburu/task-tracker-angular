@@ -2,4 +2,5 @@
   *ngFor="let task of tasks"
   [task]="task"
   (deleteTask)="handleDeleteTask(task.id!)"
+  (onUpdateReminder)="handleUpdateReminder(task)"
 ></app-task-item>
